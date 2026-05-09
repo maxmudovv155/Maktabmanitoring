@@ -1,0 +1,134 @@
+/* styles/premium.css — import o‘rniga inline (Windows/OneDrive muhitida import muammosi oldini oladi) */
+.page-gradient-bg {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, hsl(var(--accent) / 0.22), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, hsl(var(--primary) / 0.18), transparent 50%),
+    hsl(var(--background));
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary #2563eb */
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary #1e293b */
+    --secondary: 222 47% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Accent #38bdf8 */
+    --accent: 198 93% 60%;
+    --accent-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 144 61% 98%;
+
+    --danger: 0 84% 60%;
+    --danger-foreground: 0 86% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 222 47% 13%;
+    --sidebar-foreground: 210 40% 92%;
+    --sidebar-border: 217 33% 18%;
+    --sidebar-ring: 198 93% 60%;
+    --glass-border: hsl(217 91% 60% / 0.08);
+    --glass-bg: hsl(255 255% 100% / 0.72);
+    --scrollbar-thumb: hsl(217 33% 74%);
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 216 34% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 198 93% 60%;
+    --accent-foreground: 222 47% 11%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 222 47% 11%;
+
+    --danger: 0 72% 55%;
+    --danger-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 22%;
+    --ring: 198 93% 60%;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-border: 217 33% 18%;
+
+    --glass-border: hsl(198 93% 60% / 0.12);
+    --glass-bg: hsl(228 42% 9% / 0.76);
+    --scrollbar-thumb: hsl(217 25% 40%);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  /* Premium theme transition: apply only during toggle */
+  html.theme-transition *,
+  html.theme-transition body {
+    transition-property: background-color, color, border-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  ::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 9999px;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+  }
+}

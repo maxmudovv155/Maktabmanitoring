@@ -1,0 +1,7 @@
+/* Qo‘shimcha premium ustunlar (glass, gradient sahifa foni) */
+.page-gradient-bg {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, hsl(var(--accent) / 0.22), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, hsl(var(--primary) / 0.18), transparent 50%),
+    hsl(var(--background));
+}
